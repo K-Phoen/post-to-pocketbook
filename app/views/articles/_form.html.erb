@@ -1,0 +1,31 @@
+<%= form_for @article do |f| %>
+  <div class="row">
+    <div class="large-12 columns">
+      <%= f.label :title %><br>
+      <%= f.text_field :title %>
+      <% if not @article.errors[:title].count.zero? %>
+        <small class="error">
+          <%= raw(@article.errors[:title].join('<br />')) %>
+        </small>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <%= f.label :url %><br>
+      <%= f.text_field :url %>
+      <% if not @article.errors[:url].count.zero? %>
+        <small class="error">
+          <%= raw(@article.errors[:url].join('<br />')) %>
+        </small>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <%= f.submit "Send", :class => 'button expand' %>
+    </div>
+  </div>
+<% end %>
