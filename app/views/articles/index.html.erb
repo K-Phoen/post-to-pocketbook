@@ -11,7 +11,8 @@
 
   <tfoot>
     <tr>
-      <td colspan="3"><%= link_to 'Add', new_article_path %></td>
+      <td colspan="2"><%= link_to 'Add', new_article_path %></td>
+      <td colspan="1"><a href='javascript:(function(){var v="2.0.0";var submit=function(){$.ajax({url:"<%= url_for(:controller => 'api', :action => 'create_article', :only_path => false) %>",method:"POST",data:{url:window.location.href}});};if(window.jQuery===undefined||window.jQuery.fn.jquery<v){var done=false;var script=document.createElement("script");script.src="http://ajax.googleapis.com/ajax/libs/jquery/"+v+"/jquery.min.js";script.onload=script.onreadystatechange=function(){if(!done&&(!this.readyState||this.readyState=="loaded"||this.readyState=="complete")){done=true;submit();}};document.getElementsByTagName("head")[0].appendChild(script);}else{submit();}})();'>Bookmarklet</a></td>
     </tr>
   </tfoot>
 
