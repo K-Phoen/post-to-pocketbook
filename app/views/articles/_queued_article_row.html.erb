@@ -1,0 +1,11 @@
+<tr>
+  <td>
+    <div class="progress round">
+        <span class="meter" style="width: 50%"></span>
+    </div>
+  </td>
+  <td><a href="<%= article.url %>"><%= article.url %></a></td>
+  <td>
+    <%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %>
+  </td>
+</tr>

@@ -14,7 +14,13 @@ your account.
 libfontconfig is needed:
 
 ```sh
-sudo sudo apt-get install libfontconfig1
+sudo apt-get install libfontconfig1
+```
+
+redis is needed by Sidekiq:
+
+```sh
+sudo apt-get install redis-server
 ```
 
 ### Development environment
@@ -36,6 +42,12 @@ Launch the server:
 
 ```sh
 rails server -b 0.0.0.0
+```
+
+Launch Sidekiq
+
+```sh
+bundle exec sidekiq
 ```
 
 ## License

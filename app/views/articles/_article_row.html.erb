@@ -1,0 +1,8 @@
+<tr>
+  <td><%= article.title %></td>
+  <td><a href="<%= article.url %>"><%= article.url %></a></td>
+  <td>
+    <a href="/pdf/<%= article.pdf %>">Download</a> |
+    <%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %>
+  </td>
+</tr>

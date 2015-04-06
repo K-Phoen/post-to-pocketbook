@@ -3,7 +3,7 @@
 <table style="width: 100%">
   <thead>
     <tr>
-      <th>Title</th>
+      <th style="width: 30%">Title</th>
       <th>URL</th>
       <th style="width: 20%">Actions</th>
     </tr>
@@ -17,14 +17,11 @@
 
   <tbody>
   <% @articles.each do |article| %>
-    <tr>
-      <td><%= article.title %></td>
-      <td><a href="<%= article.url %>"><%= article.url %></a></td>
-      <td>
-        <a href="/pdf/<%= article.pdf %>">Download</a> |
-        <%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %>
-      </td>
-    </tr>
+    <% if article.pdf.nil? %>
+      <%= render partial: 'queued_article_row', locals: {article: article} %>
+    <% else %>
+      <%= render partial: 'article_row', locals: {article: article} %>
+    <% end %>
   <% end %>
   </tbody>
 </table>

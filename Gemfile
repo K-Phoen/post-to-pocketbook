@@ -35,6 +35,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # content extraction
 gem 'ruby-readability', '~> 0.7', :require => 'readability'
 
+# queue
+gem 'sidekiq'
+
 # pdf generation
 gem 'wkhtmltopdf-binary'
 gem 'pdfkit'
