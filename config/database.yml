@@ -20,6 +20,9 @@ test:
   <<: *default
   database: db/test.sqlite3
 
+# see DATABASE_URL env var
 production:
-  <<: *default
-  database: db/production.sqlite3
+  url: <%= ENV['DATABASE_URL'] %>
+  user: <%= ENV['DATABASE_USER'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  encoding: unicode
